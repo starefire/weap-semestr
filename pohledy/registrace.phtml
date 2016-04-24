@@ -1,0 +1,33 @@
+<h2>Registrace</h2>
+<p>
+	<?= $this->error ?>
+</p>
+
+<?php
+// funkce pro vykresleni prihlasovaciho formulare
+function formular($jmeno = "") {
+	?>
+<form id="formular" action="registrace.php" method="post">
+   <table>
+  	<tr><td><label for="uzivatelLogin">Uživatelské jméno:</label></td>
+  	<td><input type="text" name="uzivatelLogin" id="uzivatelLogin" value="<?php echo $jmeno; ?>"></td>
+  	</tr>
+    <tr>
+  	<td><label for="uzivatelHeslo1">Heslo:</label></td>
+  	<td><input type="password" name="uzivatelHeslo1" id="uzivatelHeslo1"></td>
+  	</tr>
+
+    <tr>
+  	<td><label for="uzivatelHeslo2">Heslo kontrola:</label></td>
+  	<td><input type="password" name="uzivatelHeslo2" id="uzivatelHeslo1"></td>
+  	</tr>
+
+  	<tr>
+  	<td><input type="submit" value="Registrovat" name="registrace"></td>
+  	</tr>
+  </table>
+</form>
+
+<?php
+}
+?>

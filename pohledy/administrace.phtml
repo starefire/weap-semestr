@@ -1,0 +1,43 @@
+
+        
+        
+        <h1>Administrace</h1>
+
+        <form action="index.php?strana=administrace" method="post" class="insetForm"> 
+            <table>
+                <tr><td>Název</td><td><input type="text" name="nazev" ></td></tr>
+                <tr><td>Autor</td><td><input type="text" name="autor" ></td></tr>
+                <tr><td>Cena</td><td><input type="text" name="cena" ></td></tr>
+                <tr><td>Obrázek</td><td><input type="text" name="obrazek" ></td></tr>
+                <tr><td>Krátký popis</td><td><input type="text" name="popis" ></td></tr>
+                <tr><td>Kategorie</td><td><input type="text" name="kategorie" ></td></tr>
+                <tr><td colspan="2"><input type="submit" value="Vložit" name="insert" class="button"></td></tr>
+            </table>	
+        </form>
+        
+        <table id="seznam">
+<?php
+
+        echo "<tr><h2>Seznam knih</h2></tr>";
+$pocetProduktu = 0;
+while(isset($this->data[$pocetProduktu])){
+	echo "<td>";
+	for( $j = 0;$j<3;$j++)
+	{
+	if(isset($this->data[$pocetProduktu])){
+            
+	echo <<<EOT
+        <tr>
+            <td class=nadpis"><a href="index.php?strana=Produkt&id={$this->data[$pocetProduktu]['id']}">{$this->data[$pocetProduktu]['nazev']}</a></td>
+		<td class="mala_cena">{$this->data[$pocetProduktu]['cena']} Kč</td><td class="smazat"><a href="index.php?strana=administrace&delete=true&id={$this->data[$pocetProduktu]['id']}" class="ui-icon ui-icon-trash">Smazat</a></td>
+        </tr>
+        
+EOT;
+	$pocetProduktu++;
+	}
+	}
+	echo "</td>";
+}
+?>
+            
+</table>

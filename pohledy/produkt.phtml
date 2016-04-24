@@ -1,0 +1,19 @@
+<h3><?= $this->data['nazev']?></h3>
+<?php
+	$img = "obrazky/not.jpg";
+	if(file_exists("obrazky/{$this->data['obrazek']}"))
+	$img = 	"obrazky/{$this->data['obrazek']}";
+	echo "<img id='produkt_koupit' src='$img'>";
+
+?>
+	<p id="produkt_popis"><?= $this->data['dlouhy_popis']?></p>
+<table id="Koupit">
+	<tr>
+		<td><h4>Cena: <?= $this->data['cena']?> Kč</h4></td>
+		<td><h3><a id='produkt_odkaz' href="index.php?id=<?=$this->data['id']?>" class="ui-icon ui-icon-cart">Koupit</a></h3></td>
+	</tr>
+</table>
+<br>
+
+
+<a href="index.php">Zpět na nabídku</a>

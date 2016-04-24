@@ -1,0 +1,47 @@
+<?php
+if(isset($_SESSION['zprava']))
+{
+	echo "<span id='zprava'>".$_SESSION['zprava']."</span>";
+	session_destroy();
+}
+?>
+<form method="post">
+	<strong>Řazení:</strong>
+	<select name="razeni" class="selectmenu">
+	  	<option value="cena">Od nejlevnějšího</option>
+	  	<option value="cena DESC">Od nejdražšího</option>
+	  	<option value="nazev">Abecedně A-Z</option>
+	  	<option value="nazev DESC">Abecedně Z-A</option>
+	</select>
+	<input type="submit" value="Zobrazit" class="button">
+</form>
+<table id="nabidka">
+<?php
+
+$pocetProduktu = 0;
+while(isset($this->data[$pocetProduktu])){
+	echo "<tr>";
+	for( $j = 0;$j<3;$j++)
+	{
+	if(isset($this->data[$pocetProduktu])){
+	$img = "obrazky/not.jpg";
+	if(file_exists("obrazky/{$this->data[$pocetProduktu]['obrazek']}"))
+	$img = 	"obrazky/{$this->data[$pocetProduktu]['obrazek']}";
+	echo <<<EOT
+<td>
+	<div class="produkt" >
+		<div class=nadpis"><a href="index.php?strana=Produkt&id={$this->data[$pocetProduktu]['id']}">{$this->data[$pocetProduktu]['nazev']}</a></div>
+		<div  class="obra"><a href="index.php?strana=Produkt&id={$this->data[$pocetProduktu]['id']}"><img src="$img"></a></div>
+		<div class="mala_cena">{$this->data[$pocetProduktu]['cena']} Kč</div><div class="koupit"><a href="index.php?id={$this->data[$pocetProduktu]['id']}"><span class="ui-icon ui-icon-cart">Koupit</span></a></div>
+	</div>
+</td>
+EOT;
+	$pocetProduktu++;
+	}
+	}
+	echo "</tr>";
+}
+?>
+</table>
+
+

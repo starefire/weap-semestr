@@ -1,0 +1,159 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body  {
+    background-image: url("./images/background.jpg");
+    background-color: #cccccc;
+}
+
+#obal {
+    width: 100%;
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+#header {
+    background: none;
+    width:100%;
+    height: 10em;
+    float: left;
+}
+
+#head {
+    height: 100%;
+    width: 65%;
+    float: left;
+    max-width: 35em;
+}
+
+#cart {
+    margin-top: 1em;
+    min-width: 15em;
+    width: 20%;
+    max-width: 15em;
+    max-height: 8em;
+    float: right;
+    background: wheat;
+}
+
+#cart_icon {
+    float: left;
+    margin: 2em;
+    width: 5em;
+    height: 5em;
+}
+
+#penize {
+    margin-top: 3em;
+    float: left;
+}
+
+#cena   {
+    margin-top: 3em;
+    float: left;
+}
+
+#cart_icon a {
+    width: 5em;
+    height: 5em;
+    display: block;
+}
+
+#cart_icon img {
+     width: 5em; 
+     height: 5em;
+}
+
+
+
+#head a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#container {
+    float: left;
+    width: 100%;
+    background: wheat;
+}
+
+#content {
+    margin: 2em;
+    width: 100%;
+}
+
+#footer {
+    background: black;
+    color: white;
+    width: 100%;
+    min-height: 2em;
+}
+
+.produkt {
+    float: left;
+    width: 10em;
+    background-color: #ebc190;
+    margin: 1em;
+    padding: 0.5em;
+    border: 0.1em solid brown;
+    border-radius: 0.2em;
+}
+
+.produkt .nadpis {
+    float: left;
+}
+
+.produkt .obra {
+    float: left;
+}
+
+.produkt .mala_cena { 
+    float: left;
+}
+
+.produkt .koupit {
+    float: right;
+} 
+
+#Koupit {
+    margin-top: 1.5em;
+}
+
+#produkt_koupit{
+    margin: 1.5em 0;
+}
+
+#produkt_popis {
+    width: 95%;
+}
+
+produkt_odkaz {
+    margin-left: 2em;
+}
+
+#seznam {
+    width: 100%;
+    max-width: 46em;
+    background-color: #ebc190;
+    margin-top: 1em;
+    padding: 0.5em;
+    border: 0.1em solid brown;
+    border-radius: 0.2em;
+}
+
+.insetForm{
+    width: 100%;
+    max-width: 20em;
+    background-color: #ebc190;
+    margin-top: 1em;
+    padding: 0.5em;
+    border: 0.1em solid brown;
+    border-radius: 0.2em;
+}
+
+
+

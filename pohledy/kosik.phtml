@@ -1,0 +1,55 @@
+<h2>Košík</h2>
+<p>
+	<?= $this->error?>
+</p>
+<table id="Kosik">
+	<tr>
+		<th>Název</th>
+		<th>Počet kusů</th>
+		<th>Cena</th>
+	</tr>
+<?php
+$celkovaCena = 0;
+for($i = 0; $i<count($this->data['produkty']);$i++){
+	echo <<<EOT
+	<tr>
+		<td><a href="index.php?strana=Produkt&id={$this->data['produkty'][$i]['id']}}">{$this->data['produkty'][$i]['nazev']}</a></td>
+		<td>{$this->data['produkty'][$i]['pocet']}</td>
+		<td>{$this->data['produkty'][$i]['cena']} Kč</td>
+	</tr>
+EOT;
+$celkovaCena += $this->data['produkty'][$i]['cena']*$this->data['produkty'][$i]['pocet'];
+}
+?>
+	<tr>
+		<th>Celkem</th>
+		<th></th>
+		<th><?= $celkovaCena?> Kč</th>
+	</tr>
+</table>
+<?php
+#Vypisuje formulář jeno těm, kdo mají něco v košíku
+if(isset($_SESSION['id'])){
+?>
+<h2>Objednání</h2>
+<div id="Objednani">
+<form method="post">
+	Jméno: <input type="text" name="jmeno" value="<?= $this->jmeno?>"> <br>
+	Příjmení: <input type="text" name="prijmeni" value="<?= $this->prijmeni?>"><br>
+	Město: <input type="text" name="mesto" value="<?= $this->mesto?>"><br>
+	Platba:	
+	<select name="platba" value="<?= $this->platba?>">
+	  	<option value="karta">Kartou</option>
+	  	<option value="dobir">Hotově při převzetí (dobírka)</option>
+	</select><br>
+	Způsob doručení (doprava je v ceně): 
+	<select name="doprava" value="<?= $this->doprava?>">
+	  	<option value="osob">Osobní převzetí v Havířově</option>
+	  	<option value="letec">Letecky</option>	  	
+	</select><br>
+	<input type="submit" value="Objednat">
+</form>
+</div>
+<?php
+}
+?>

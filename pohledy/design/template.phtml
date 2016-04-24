@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="pohledy/design/style.css" rel="stylesheet">
+	<link href="pohledy/design/jquery-ui.css" rel="stylesheet">
+  <title><?= $this->titulek ?></title>
+
+  <script type="text/javascript">
+  </script>
+
+  </head>
+  <body>
+      <div id="main_container">
+      <div id="obal">
+
+        <div id="header">
+
+            <div id="head">
+            <a href="index.php"></a>
+            </div>
+            <div id="cart">
+                <span id="cart_icon"><a href="index.php?strana=kosik"><img src="pohledy/design/images/cart.png"/></a></span>
+                <span id="cena">0</span><br><span id="penize">Kč</span>
+            </div>
+
+        </div>
+
+
+
+
+  <div id="container">
+
+<!--
+ -------------------------------------------------------------------------------
+-->
+	<div id="content">
+
+			<article>
+				<?php
+				require ("pohledy/$this->pohled.phtml");
+				?>
+			</article>
+
+	</div>
+        <div id="footer">
+
+        </div>
+    </div>
+  </div>
+          </div>
+<script src="pohledy/design/external/jquery/jquery.js"></script>
+<script src="pohledy/design/jquery-ui.js"></script>
+<script>
+
+$( ".accordion" ).accordion();
+
+
+
+var availableTags = [
+	"ActionScript",
+	"AppleScript",
+	"Asp",
+	"BASIC",
+	"C",
+	"C++",
+	"Clojure",
+	"COBOL",
+	"ColdFusion",
+	"Erlang",
+	"Fortran",
+	"Groovy",
+	"Haskell",
+	"Java",
+	"JavaScript",
+	"Lisp",
+	"Perl",
+	"PHP",
+	"Python",
+	"Ruby",
+	"Scala",
+	"Scheme"
+];
+$( ".autocomplete" ).autocomplete({
+	source: availableTags
+});
+
+
+
+$( ".button" ).button();
+$( ".radioset" ).buttonset();
+
+
+
+$( ".tabs" ).tabs();
+
+
+
+$( ".dialog" ).dialog({
+	autoOpen: false,
+	width: 400,
+	buttons: [
+		{
+			text: "Ok",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		{
+			text: "Cancel",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	]
+});
+
+// Link to open the dialog
+$( ".dialog-link" ).click(function( event ) {
+	$( ".dialog" ).dialog( "open" );
+	event.preventDefault();
+});
+
+
+
+$( ".datepicker" ).datepicker({
+	inline: true
+});
+
+
+
+$( ".slider" ).slider({
+	range: true,
+	values: [ 17, 67 ]
+});
+
+
+
+$( ".progressbar" ).progressbar({
+	value: 20
+});
+
+
+
+$( ".spinner" ).spinner();
+
+
+
+$( ".menu" ).menu();
+
+
+
+$( ".tooltip" ).tooltip();
+
+
+
+$( ".selectmenu" ).selectmenu();
+
+
+// Hover states on the static widgets
+$( ".dialog-link, #icons li" ).hover(
+	function() {
+		$( this ).addClass( "ui-state-hover" );
+	},
+	function() {
+		$( this ).removeClass( "ui-state-hover" );
+	}
+);
+</script>
+  
+  
+  </body>
+</html>
