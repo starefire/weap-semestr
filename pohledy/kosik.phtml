@@ -27,29 +27,5 @@ $celkovaCena += $this->data['produkty'][$i]['cena']*$this->data['produkty'][$i][
 		<th><?= $celkovaCena?> Kč</th>
 	</tr>
 </table>
-<?php
-#Vypisuje formulář jeno těm, kdo mají něco v košíku
-if(isset($_SESSION['id'])){
-?>
-<h2>Objednání</h2>
-<div id="Objednani">
-<form method="post">
-	Jméno: <input type="text" name="jmeno" value="<?= $this->jmeno?>"> <br>
-	Příjmení: <input type="text" name="prijmeni" value="<?= $this->prijmeni?>"><br>
-	Město: <input type="text" name="mesto" value="<?= $this->mesto?>"><br>
-	Platba:	
-	<select name="platba" value="<?= $this->platba?>">
-	  	<option value="karta">Kartou</option>
-	  	<option value="dobir">Hotově při převzetí (dobírka)</option>
-	</select><br>
-	Způsob doručení (doprava je v ceně): 
-	<select name="doprava" value="<?= $this->doprava?>">
-	  	<option value="osob">Osobní převzetí v Havířově</option>
-	  	<option value="letec">Letecky</option>	  	
-	</select><br>
-	<input type="submit" value="Objednat">
-</form>
-</div>
-<?php
-}
-?>
+
+
