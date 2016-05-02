@@ -15,6 +15,10 @@ public function __construct()
 
     public function Proved() {
         
+        if(!(isset($_SESSION['login_user'])&&($_SESSION['login_user']=="admin"))){
+            header("location: index.php");
+            return;
+        }
         
         $administrace = new Administrace();
         if(isset($_GET["delete"])){

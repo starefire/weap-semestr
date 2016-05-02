@@ -11,7 +11,14 @@ class NabidkaKontroler extends Kontroler {
 	{
 		#Jestli je v GET id produktu a obsahuje jenom čísla, produkt se přidá do SESSION, a přesměruje na čistou nabídku
 		$idProduktu = (isset($_GET['id'])) ? $_GET['id'] : "";
+		
+                if(isset($_GET['logout'])&&$_GET['logout']=="ano"){
+                    session_destroy();
+                    $this->Presmeruj("./index.php");
+                }
 
+                
+                
                 $kos = new Kosik();
                 if(ctype_digit($idProduktu))
 		{	

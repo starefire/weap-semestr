@@ -15,6 +15,21 @@ if(isset($_SESSION['zprava']))
 	</select>
 	<input type="submit" value="Zobrazit" class="button">
 </form>
+<?php 
+if(isset($_SESSION['login_user']))
+    echo "<div><a href = './index.php?logout=ano'>Sign Out</a></div>";
+else echo "<div><a href = './index.php?logout=ano'>Clear Sessions</a>         <a href = './login.php'>Log in</a></div>";
+ 
+
+
+?>
+
+<?php 
+if(isset($_SESSION['login_user']) && $_SESSION['login_user']=="admin")
+    echo "<div><a href='./index.php?strana=administrace'>Administrace</a></div>";
+//else echo "<div><a href = './login.php>Log in</a></div>";
+
+?>
 <table id="nabidka">
 <?php
 
