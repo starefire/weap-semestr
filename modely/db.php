@@ -45,4 +45,10 @@ class db
         $data->execute($param);
         return $data->fetch();
     }
+    
+    public static function Login ($dotaz,$param = array() ){
+        $data = self::$dbPripojeni->prepare($dotaz);
+        $data->execute($param);
+        return $data->fetch();        
+    }
 }
