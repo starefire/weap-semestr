@@ -11,6 +11,12 @@ class Kosik{
 			else
 				$_SESSION["id"]["$id"] = 1;
 		}
+                /*$celkovaCena = 0;
+		for($i = 0; $i<count($produkty);$i++){
+	
+		$celkovaCena += $produkty[$i]['cena']*$produkty[$i]['pocet'];
+		}
+                $_SESSION["cena"] = $celkovaCena;*/
 	}
 	#Vrati obsah SESSION s id
 	public function VypisObsah()

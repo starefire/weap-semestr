@@ -12,12 +12,9 @@
     }
     spl_autoload_register("autoload");
 
-    #Připojení k databázi
-    #db::pripoj("te.db");
-    #################
-    #MySQL - zkušební
-    #################
-    db::pripojMySQL("localhost","czjan-prochazk15","prochy01","czjan-prochazka");
+    
+    db::pripojMySQL("localhost","root","","eshop");
+    //db::pripojMySQL("localhost","czjan-prochazk15","prochy01","czjan-prochazka");
 
     #Vybrání stránky ke zobrazení (málo času na router)
     if(isset($_GET['strana']))

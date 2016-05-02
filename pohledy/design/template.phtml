@@ -3,6 +3,7 @@
   <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<link href="pohledy/design/style.css" rel="stylesheet">
+        <link rel="icon" href="/fav.png" type="image/png"/>
 	<link href="pohledy/design/jquery-ui.css" rel="stylesheet">
   <title><?= $this->titulek ?></title>
 
@@ -21,7 +22,8 @@
             </div>
             <div id="cart">
                 <span id="cart_icon"><a href="index.php?strana=kosik"><img src="pohledy/design/images/cart.png"/></a></span>
-                <span id="cena">0</span><br><span id="penize">Kč</span>
+                <span id="cena"><?php 
+                if(isset($this->cena)) {echo "$this->cena";} ?></span><br><span id="penize">Kč</span>
             </div>
 
         </div>

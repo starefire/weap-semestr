@@ -21,8 +21,10 @@ class ProduktKontroler extends Kontroler
 
 		if(Produkt::Existuje($idProduktu))
 		{
+                        $kos = new Kosik();
 			$this->data = Produkt::Vypis($idProduktu);
 			$this->titulek= $this->data['nazev'];
+                        $this->cena = $kos->CelkovaCena();
 		}
 		else
 			$this->Presmeruj("index.php");

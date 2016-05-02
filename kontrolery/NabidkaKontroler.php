@@ -12,9 +12,9 @@ class NabidkaKontroler extends Kontroler {
 		#Jestli je v GET id produktu a obsahuje jenom čísla, produkt se přidá do SESSION, a přesměruje na čistou nabídku
 		$idProduktu = (isset($_GET['id'])) ? $_GET['id'] : "";
 
-		if(ctype_digit($idProduktu))
-		{
-			$kos = new Kosik();
+                $kos = new Kosik();
+                if(ctype_digit($idProduktu))
+		{	
 			$kos->Pridej($idProduktu);
 			$this->Presmeruj("index.php");
 		}
@@ -26,6 +26,7 @@ class NabidkaKontroler extends Kontroler {
 		#Vytvoreni nabidky a ulozeni dat
 		$nabidka = new Nabidka();
 		$this->data = $nabidka->VypisProdukty($kategorie,$razeni);
+                $this->cena = $kos->CelkovaCena();
 	}
 
 }
